@@ -1,0 +1,179 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #e0f2f7; /* Light teal background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Panel (Sidebar) */
+.left-panel {
+    background-color: #607d8b; /* Grayish blue sidebar */
+    width: 220px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-area {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #78909c;
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav .nav-item {
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.main-nav .nav-item a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav .nav-item.active a,
+.main-nav .nav-item a:hover {
+    background-color: #455a64; /* Darker grayish blue */
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    color: #263238; /* Dark grayish blue */
+    margin-top: 0;
+}
+
+/* Overview Cards */
+.overview-cards {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.overview-card {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overview-card.green { background-color: #aed581; }
+.overview-card.cyan { background-color: #4dd0e1; }
+.overview-card.light-gray { background-color: #cfd8dc; }
+.overview-card.light-green { background-color: #81c784; }
+.overview-card.red { background-color: #e57373; }
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.income-expenses-box,
+.reminder-box,
+.location-box,
+.status-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.income-expenses-box h2,
+.reminder-box h2,
+.location-box h3,
+.status-box h3 {
+    color: #263238;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.reminder-box p {
+    color: #78909c;
+    margin-bottom: 15px;
+}
+
+.add-reminder-btn {
+    background-color: #1e88e5; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-reminder-btn:hover {
+    background-color: #1565c0;
+}
+
+.search-input input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #90a4ae;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-nav ul {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .main-nav .nav-item {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .overview-cards {
+        overflow-x: auto;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
